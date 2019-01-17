@@ -1,11 +1,14 @@
 <p align="center">
 	<img src="app/assets/repo-header.jpg" alt="" />
-	<span>with Marko, Browserify and Gulp.</span>
+	<span>with Marko, Webpack and Gulp.</span>
 </p>
 
 ![Marko App Electron Window](app/assets/app-window.png)
 
 ```shell
+# Begin with installing Gulp!
+$ npm install gulp -g
+
 # Clone Repository
 $ git clone https://github.com/Teddy95/markotron.git my-project
 
@@ -25,9 +28,9 @@ $ npm run dev
 
 - Live reloading of web contents in all browser windows after filechanges :fire:
 - Watch task for live compiling of Sass/Scss and Marko files after changes :dizzy:
-- Compiling Marko files to Html, Js & Css and bundle it with Browserify :crystal_ball:
+- Compiling Marko components including Html, Js & Css and bundle it with Webpack :crystal_ball:
 - Gulp included + Tasks for compiling, packaging & more :wine_glass:
-- Included Electron Packager for packaging application for Mac OS X, Windows and Linux :gift:
+- Included Electron Packager configurations for packaging application for Mac OS X, Windows and Linux :gift:
 
 Happy Coding! :heart: :sparkles:
 
@@ -37,8 +40,9 @@ Happy Coding! :heart: :sparkles:
 
 - `/app` Electron index.html & main.js
 - `/app/assets` Logos, images, icons, ...
+- `/app/components` Marko components
 - `/app/css` Your Css files
-- `/app/js` Your React Js files
+- `/app/js` Your Js files
 - `/app/sass` Your Sass/Scss files
 
 ### Production in `/build`
@@ -46,7 +50,7 @@ Happy Coding! :heart: :sparkles:
 - `/build` Electron index.html & main.js copied from `/app`
 - `/build/assets` Files copied from `/app/assets`
 - `/build/css` Here you find the `style.min.css` generated from all Css files in `/app/css`
-- `/build/js` Here you find the `bundle.min.js` with contains the Js code of your React application
+- `/build/js` Here you find the `scripts.min.js` generated from all Js files in `/app/js` & the `bundle.min.js` which contains the Js code of your Marko application
 
 ### Packaging in `/release`
 
@@ -62,12 +66,12 @@ $ npm start
 
 ### Start App in dev mode
 
-1. Compile Sass/Scss & Jsx
-2. Build application
-3. Start `gulp watch` for recompiling Sass/Scss & Jsx after filechanges
-4. Start Electron
-
 ```shell
+# 1. Compile Sass/Scss & Jsx
+# 2. Build application
+# 3. Start `gulp watch` for recompiling Sass/Scss & Jsx after filechanges
+# 4. Start Electron
+
 $ npm run dev
 ```
 
@@ -76,9 +80,10 @@ $ npm run dev
 Watching the following scripts and compile they, if there were changes.
 
 ```
+app/components/**/*
 app/sass/*.scss
 app/css/*.css
-app/js/**/*
+app/js/*.js
 app/*.html
 app/*.js
 ```
@@ -103,8 +108,8 @@ Set product name & icons in `package.json`.
 
 ```json
 {
-	"name": "reactron",
-	"productName": "Reactron - Electron Boilerplate",
+	"name": "markotron",
+	"productName": "Markotron - Electron Boilerplate",
 	"build": {
 		"icon": {
 			"mac": "build/assets/icons/icon.icns",
@@ -113,6 +118,12 @@ Set product name & icons in `package.json`.
 		}
 	}
 }
+```
+
+##### Install Electron Packager
+
+```shell
+$ npm install electron-packager -g
 ```
 
 ##### Packaging
