@@ -46,8 +46,8 @@ gulp.task('copy-css', () => {
  			'app/components/app.js'
  		],
  		extensions: [
- 			'.marko'
- 			// '.js',
+ 			'.marko',
+ 			'.js'
  			// '.css',
  			// '.html'
  		],
@@ -69,7 +69,7 @@ gulp.task('copy-css', () => {
 gulp.task('copy-js', () => {
 	return gulp.src('app/js/*.js')
 	.pipe(concat('bundle.min.js'))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest('build/js/'))
 })
 

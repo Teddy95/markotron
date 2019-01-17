@@ -1,8 +1,8 @@
 {
-    "name": "reactron",
-    "productName": "Reactron - Electron Boilerplate",
+    "name": "markotron",
+    "productName": "Markotron - Electron Boilerplate",
     "version": "1.0.0",
-    "description": "Electron Boilerplate with React, Babel, Browserify and Gulp",
+    "description": "Electron Boilerplate with Marko, Browserify and Gulp",
     "main": "build/main.js",
     "scripts": {
         "start": "electron .",
