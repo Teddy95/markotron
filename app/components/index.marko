@@ -1,22 +1,45 @@
-class {
-    onCreate() {
-        this.state = { count:0 };
-    }
-    increment() {
-        this.state.count++;
-    }
-}
-
 style {
-    .count {
-        color:#09c;
-        font-size:3em;
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-    .example-button {
-        font-size:1em;
-        padding:0.5em;
+
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+    }
+
+    .App {
+        text-align: center;
+    }
+
+    .App-logo {
+        height: 40vmin;
+    }
+
+    .App-header {
+        background-color: #282c34;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(10px + 2vmin);
+        color: white;
+    }
+
+    .App-link {
+        color: #61dafb;
     }
 }
 
-div.count -- ${state.count}
-button.example-button on-click('increment') -- Click me!
+div.App
+    header.App-header
+        img.App-logo src="assets/logo.svg"
+        p -- Edit <code>app/components/index.marko</code> and save to reload.
+        a.App-link href="https://markojs.com" -- Learn Marko
