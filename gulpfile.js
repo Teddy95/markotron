@@ -45,7 +45,7 @@ gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack --config webp
  */
 gulp.task('copy-js', () => {
 	return gulp.src('app/js/*.js')
-	.pipe(concat('scripts.js'))
+	.pipe(concat('scripts.min.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('build/js/'))
 })
@@ -133,8 +133,8 @@ gulp.task('release', gulp.series('build', 'set-env:production', gulp.parallel('p
  * Add watch task for Sass/Scss, Jsx and Js Files
  */
 gulp.task('watch', done => {
-	gulp.watch('app/sass/*.scss', gulp.series('compile-sass'))
     gulp.watch('app/components/**/*', gulp.series('compile-marko'))
+	gulp.watch('app/sass/*.scss', gulp.series('compile-sass'))
 	gulp.watch('app/css/*.css', gulp.series('copy-css'))
 	gulp.watch('app/js/*.js', gulp.series('copy-js'))
 	gulp.watch('app/*.html', gulp.series('copy-html'))
