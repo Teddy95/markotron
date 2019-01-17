@@ -1,3 +1,12 @@
+class {
+    onCreate() {
+        this.state = {
+            logo: 'assets/logo.svg',
+            href: 'https://markojs.com'
+        }
+    }
+}
+
 style {
     body {
         margin: 0;
@@ -40,6 +49,6 @@ style {
 
 div.App
     header.App-header
-        img.App-logo src="assets/logo.svg"
+        img.App-logo src=state.logo
         p -- Edit <code>app/components/index.marko</code> and save to reload.
-        a.App-link href="https://markojs.com" -- Learn Marko
+        a.App-link href=state.href -- Learn Marko
