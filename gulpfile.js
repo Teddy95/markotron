@@ -1,7 +1,6 @@
 /**
  * Import all required node modules
  */
-var browserify = require('browserify')
 var fs = require('fs')
 var gulp = require('gulp')
 var concat = require('gulp-concat')
@@ -10,8 +9,6 @@ var sass = require('gulp-sass')
 const shell = require('gulp-shell')
 var uglify = require('gulp-uglify')
 sass.compiler = require('node-sass')
-var buffer = require('vinyl-buffer')
-var source = require('vinyl-source-stream')
 
 /**
  * Compile Sass/Scss to Css
@@ -40,27 +37,7 @@ gulp.task('copy-css', () => {
  * Compile and bundle Marko files
  * app/marko/app.marko -> app/js/marko.js
  */
- gulp.task('compile-marko', () => {
- 	var options = {
- 		entries: [
- 			'app/components/app.js'
- 		],
- 		extensions: [
- 			'.marko',
- 			'.js'
- 			// '.css',
- 			// '.html'
- 		],
- 		debug: true
- 	}
-
- 	return browserify(options)
- 	// .transform('markoify')
- 	.bundle()
- 	.pipe(source('marko.js'))
- 	.pipe(buffer())
- 	.pipe(gulp.dest('app/js/'))
- })
+gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack --config webpack.config.js'))
 
 /**
  * Concatenate, uglify and copy Js
@@ -68,8 +45,8 @@ gulp.task('copy-css', () => {
  */
 gulp.task('copy-js', () => {
 	return gulp.src('app/js/*.js')
-	.pipe(concat('bundle.min.js'))
-	// .pipe(uglify())
+	.pipe(concat('scripts.js'))
+	.pipe(uglify())
 	.pipe(gulp.dest('build/js/'))
 })
 
