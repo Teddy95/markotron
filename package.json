@@ -1,0 +1,52 @@
+{
+    "name": "reactron",
+    "productName": "Reactron - Electron Boilerplate",
+    "version": "1.0.0",
+    "description": "Electron Boilerplate with React, Babel, Browserify and Gulp",
+    "main": "build/main.js",
+    "scripts": {
+        "start": "electron .",
+        "dev": "gulp serve",
+        "build": "gulp build",
+        "watch": "gulp watch",
+        "package-mac": "gulp package-mac",
+        "package-windows": "gulp package-windows",
+        "package-linux": "gulp package-linux",
+        "release": "gulp release"
+    },
+    "devDependencies": {
+        "browserify": "^16.2.3",
+        "devtron": "^1.4.0",
+        "electron": "^4.0.1",
+        "electron-packager": "^13.0.1",
+        "electron-reload": "^1.4.0",
+        "gulp": "^4.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-css": "^0.1.0",
+        "gulp-sass": "^4.0.2",
+        "gulp-shell": "^0.6.5",
+        "gulp-uglify": "^3.0.1",
+        "marko": "^4.14.19",
+        "markoify": "^2.2.2",
+        "node-sass": "^4.11.0",
+        "vinyl-buffer": "^1.0.1",
+        "vinyl-source-stream": "^2.0.0"
+    },
+    "dependencies": {
+        "electron-is-dev": "^1.0.1",
+        "react": "^16.7.0",
+        "react-dom": "^16.7.0"
+    },
+    "build": {
+        "icon": {
+            "mac": "build/assets/icons/icon.icns",
+            "windows": "build/assets/icons/icon.ico",
+            "linux": "build/assets/icons/icon.png"
+        }
+    },
+    "browserify": {
+        "transform": [
+            "markoify"
+        ]
+    }
+}
