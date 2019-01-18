@@ -38,7 +38,7 @@ gulp.task('copy-css', () => {
  * app/marko/app.marko -> app/js/marko.js
  */
 if (process.platform === 'win32') {
-	gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack.cmd --config webpack.config.js'))
+	gulp.task('compile-marko', shell.task('webpack.cmd --config webpack.config.js'))
 } else {
 	gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack --config webpack.config.js'))
 }
