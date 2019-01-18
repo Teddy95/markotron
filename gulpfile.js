@@ -37,7 +37,11 @@ gulp.task('copy-css', () => {
  * Compile and bundle Marko files
  * app/marko/app.marko -> app/js/marko.js
  */
-gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack --config webpack.config.js'))
+if (process.platform === 'win32') {
+	gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack.cmd --config webpack.config.js'))
+} else {
+	gulp.task('compile-marko', shell.task('./node_modules/.bin/webpack --config webpack.config.js'))
+}
 
 /**
  * Concatenate, uglify and copy Js
