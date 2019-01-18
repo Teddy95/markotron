@@ -80,6 +80,7 @@ $ npm run dev
 Watching the following scripts and compile they, if there were changes.
 
 ```
+app/assets/**/*
 app/components/**/*
 app/sass/*.scss
 app/css/*.css
