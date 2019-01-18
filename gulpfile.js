@@ -137,6 +137,7 @@ gulp.task('release', gulp.series('build', 'set-env:production', gulp.parallel('p
  * Add watch task for Sass/Scss, Jsx and Js Files
  */
 gulp.task('watch', done => {
+    gulp.watch('app/assets/**/*', gulp.series('copy-assets'))
     gulp.watch('app/components/**/*', gulp.series('compile-marko'))
 	gulp.watch('app/sass/*.scss', gulp.series('compile-sass'))
 	gulp.watch('app/css/*.css', gulp.series('copy-css'))
