@@ -143,7 +143,8 @@ gulp.task('watch', done => {
 	gulp.watch('app/css/*.css', gulp.series('copy-css'))
 	gulp.watch('app/js/*.js', gulp.series('copy-js'))
 	gulp.watch('app/*.html', gulp.series('copy-html'))
-	gulp.watch('app/*.js', gulp.series('compile-marko', 'copy-js', 'copy-electron-js'))
+	gulp.watch('app/*.js', gulp.series('copy-electron-js'))
+	gulp.watch('client.js', gulp.series('compile-marko', 'copy-js'))
 	done()
 })
 
