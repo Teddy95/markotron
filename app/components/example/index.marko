@@ -1,0 +1,22 @@
+class {
+	onCreate() {
+		this.state = { count:0 };
+	}
+	increment() {
+		this.state.count++;
+	}
+}
+
+style {
+	.count {
+		color: #ff9500;
+		font-size: 3em;
+		text-align: center;
+	}
+}
+
+div.container
+	div.count
+		-- ${state.count}
+
+	button.button on-click('increment') -- Click me! ♥
