@@ -85,7 +85,7 @@ const renderer = {
 	name: 'Renderer',
 	mode: env,
 	entry: {
-		renderer: './app/app.js'
+		renderer: './app/renderer.js'
 	},
 	output: {
 		filename: 'renderer.js',
