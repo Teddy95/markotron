@@ -7,7 +7,7 @@
     "scripts": {
         "start": "cross-env NODE_ENV=production electron .",
         "build": "cross-env NODE_ENV=production webpack --progress",
-        "dev": "cross-env NODE_ENV=development webpack-dev-server & cross-env NODE_ENV=development electron ./app/main.js",
+        "dev": "concurrently \"cross-env NODE_ENV=development webpack-dev-server\" \"cross-env NODE_ENV=development electron ./app/main.js\"",
         "test": "jest",
         "package-mac": "npm run build && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=$npm_package_build_icon_mac --prune=true --out=release",
         "package-linux": "npm run build && electron-packager . $npm_package_name --overwrite --asar=true --platform=linux --arch=x64 --icon=$npm_package_build_icon_linux --prune=true --out=release",
@@ -33,6 +33,7 @@
     },
     "devDependencies": {
         "@marko/webpack": "^2.0.0",
+        "concurrently": "^5.1.0",
         "css-loader": "^3.4.2",
         "devtron": "^1.4.0",
         "electron": "^7.1.11",
