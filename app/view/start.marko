@@ -1,11 +1,4 @@
-class {
-    onCreate() {
-        this.state = {
-            logo: 'assets/logo.svg',
-            href: 'https://markojs.com'
-        }
-    }
-}
+import logo from '../assets/images/logo.svg'
 
 <!-- You can use Scss here -->
 style {
@@ -35,6 +28,6 @@ style {
 
 div.App
     header.App-header
-        img.App-logo src=state.logo
-        p -- Edit <code>app/components/index.marko</code> and save to reload.
-        a.App-link href=state.href -- Learn Marko
+        img.App-logo src=logo
+        p -- Edit <code>app/view/start.marko</code> and save to reload.
+        a.App-link href="https://markojs.com" -- Learn Marko

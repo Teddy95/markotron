@@ -1,14 +1,11 @@
 <p align="center">
-	<img src="app/assets/repo-header.jpg" alt="" />
-	<span>with Marko, Webpack and Gulp.</span>
+	<img src="resources/repo-header.jpg" alt="" />
+	<span>with Marko & Webpack.</span>
 </p>
 
-![Marko App Electron Window](app/assets/app-window.png)
+![Marko App Electron Window](resources/app-window.png)
 
 ```shell
-# Begin with installing Gulp!
-$ npm install gulp -g
-
 # Clone Repository
 $ git clone https://github.com/Teddy95/markotron.git my-project
 
@@ -20,17 +17,15 @@ $ npm install
 
 # Compile & run App...
 $ npm run build
-$ npm start
+$ npm run start
 
 # ...or run App in dev mode
 $ npm run dev
 ```
 
-- Live reloading of web contents in all browser windows after filechanges :fire:
-- Watch task for live compiling of Sass/Scss and Marko files after changes :dizzy:
+- Live reloading of web contents in all browser windows after filechanges :fire: :dizzy:
 - Compiling Marko components including Html, Js & Css and bundle it with Webpack :crystal_ball:
-- Gulp included + Tasks for compiling, packaging & more :wine_glass:
-- Included Electron Packager configurations for packaging application for Mac OS X, Windows and Linux :gift:
+- Included Electron Packager configurations for packaging application for Mac OS X, Windows and Linux :wine_glass: :gift:
 
 Happy Coding! :heart: :sparkles:
 
@@ -41,16 +36,13 @@ Happy Coding! :heart: :sparkles:
 - `/app` Electron index.html & main.js
 - `/app/assets` Logos, images, icons, ...
 - `/app/components` Marko components
-- `/app/css` Your Css files
-- `/app/js` Your Js files
-- `/app/sass` Your Sass/Scss files
+- `/app/lib` JavaScript files / libraries
+- `/app/style` CSS / SCSS Stylesheets
+- `/app/view` Marko.js views for the windows
 
 ### Production in `/build`
 
-- `/build` Electron index.html & main.js copied from `/app`
-- `/build/assets` Files copied from `/app/assets`
-- `/build/css` Here you find the `style.min.css` generated from all Css files in `/app/css`
-- `/build/js` Here you find the `scripts.min.js` generated from all Js files in `/app/js` & the `bundle.min.js` which contains the Js code of your Marko application
+- `/build` App compiled from `/app`
 
 ### Packaging in `/release`
 
@@ -61,36 +53,15 @@ Happy Coding! :heart: :sparkles:
 ### Start App
 
 ```shell
-$ npm start
+$ npm run start
 ```
 
 ### Start App in dev mode
 
 ```shell
-# 1. Compile Sass/Scss & Jsx
-# 2. Build application
-# 3. Start `gulp watch` for recompiling Sass/Scss & Jsx after filechanges
-# 4. Start Electron
+# Recompile app after file changes and reload contents in Electron
 
 $ npm run dev
-```
-
-### Watch Scripts
-
-Watching the following scripts and compile they, if there were changes.
-
-```
-app/assets/**/*
-app/components/**/*
-app/sass/*.scss
-app/css/*.css
-app/js/*.js
-app/*.html
-app/*.js
-```
-
-```shell
-$ npm run watch
 ```
 
 ### Build App
@@ -121,37 +92,18 @@ Set product name & icons in `package.json`.
 }
 ```
 
-##### Install Electron Packager
-
-```shell
-$ npm install electron-packager -g
-```
-
 ##### Packaging
 
-_Packaging for Mac OS X_:
-
 ```shell
-$ npm run build
+# Packaging for Mac OS X
 $ npm run package-mac
-```
 
-_Packaging for Windows_:
-
-```shell
-$ npm run build
-$ npm run package-windows
-```
-
-_Packaging for Linux_:
-
-```shell
-$ npm run build
+# Packaging for Linux
 $ npm run package-linux
-```
 
-...or release it all at once:
+# Packaging for Windows
+$ npm run package-windows
 
-```shell
+# ...or release it all at once
 $ npm run release
 ```

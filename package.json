@@ -1,47 +1,58 @@
 {
     "name": "markotron",
     "productName": "Markotron - Electron Boilerplate",
-    "version": "1.0.0",
-    "description": "Electron Boilerplate with Marko, Webpack and Gulp",
+    "version": "2.0.0",
+    "description": "Electron Boilerplate with Marko & Webpack",
     "main": "build/main.js",
     "scripts": {
-        "start": "electron .",
-        "dev": "gulp serve",
-        "build": "gulp build",
-        "watch": "gulp watch",
-        "package-mac": "gulp package-mac",
-        "package-windows": "gulp package-windows",
-        "package-linux": "gulp package-linux",
-        "release": "gulp release"
+        "start": "cross-env NODE_ENV=production electron .",
+        "build": "cross-env NODE_ENV=production webpack --progress",
+        "dev": "cross-env NODE_ENV=development webpack-dev-server & cross-env NODE_ENV=development electron ./app/main.js",
+        "test": "jest",
+        "package-mac": "npm run build && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=$npm_package_build_icon_mac --prune=true --out=release",
+        "package-linux": "npm run build && electron-packager . $npm_package_name --overwrite --asar=true --platform=linux --arch=x64 --icon=$npm_package_build_icon_linux --prune=true --out=release",
+        "package-windows": "npm run build && electron-packager . $npm_package_name --overwrite --asar=true --platform=win32 --arch=ia32 --icon=$npm_package_build_icon_windows --prune=true --out=release --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=$npm_package_productName",
+        "release": "npm run package-mac && npm run package-linux && npm run package-windows"
     },
-    "devDependencies": {
-        "css-loader": "^2.1.0",
-        "devtron": "^1.4.0",
-        "electron": "^4.0.1",
-        "electron-packager": "^13.0.1",
-        "electron-reload": "^1.4.0",
-        "gulp": "^4.0.0",
-        "gulp-concat": "^2.6.1",
-        "gulp-css": "^0.1.0",
-        "gulp-sass": "^4.0.2",
-        "gulp-shell": "^0.6.5",
-        "gulp-uglify": "^3.0.1",
-        "marko": "^4.14.19",
-        "marko-loader": "^1.3.3",
-        "node-sass": "^4.11.0",
-        "sass-loader": "^7.1.0",
-        "style-loader": "^0.23.1",
-        "webpack": "^4.28.4",
-        "webpack-cli": "^3.2.1"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Teddy95/markotron.git"
     },
-    "dependencies": {
-        "electron-is-dev": "^1.0.1"
+    "author": "Andre Sieverding",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Teddy95/markotron/issues"
     },
+    "homepage": "https://github.com/Teddy95/markotron#readme",
     "build": {
         "icon": {
-            "mac": "build/assets/icons/icon.icns",
-            "windows": "build/assets/icons/icon.ico",
-            "linux": "build/assets/icons/icon.png"
+            "mac": "resources/icons/icon.icns",
+            "windows": "resources/icons/icon.ico",
+            "linux": "resources/icons/icon.png"
         }
+    },
+    "devDependencies": {
+        "@marko/webpack": "^2.0.0",
+        "css-loader": "^3.4.2",
+        "devtron": "^1.4.0",
+        "electron": "^7.1.11",
+        "electron-packager": "^14.2.0",
+        "file-loader": "^5.0.2",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.2.0",
+        "jest": "^25.1.0",
+        "marko": "^4.18.35",
+        "mini-css-extract-plugin": "^0.9.0",
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2",
+        "svg-url-loader": "^3.0.3",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10",
+        "webpack-dev-server": "^3.10.1",
+        "webpack-node-externals": "^1.7.2"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.12.0",
+        "cross-env": "^6.0.3"
     }
 }
