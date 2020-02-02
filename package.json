@@ -1,6 +1,7 @@
 {
     "name": "markotron",
-    "version": "2.0.0-alpha",
+    "productName": "Markotron - Electron Boilerplate",
+    "version": "2.0.0",
     "description": "Electron Boilerplate with Marko & Webpack",
     "main": "build/main.js",
     "scripts": {
@@ -34,6 +35,7 @@
         "@marko/webpack": "^2.0.0",
         "css-loader": "^3.4.2",
         "devtron": "^1.4.0",
+        "electron": "^7.1.11",
         "electron-packager": "^14.2.0",
         "file-loader": "^5.0.2",
         "html-loader": "^0.5.5",
@@ -51,7 +53,6 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.12.0",
-        "cross-env": "^6.0.3",
-        "electron": "^7.1.11"
+        "cross-env": "^6.0.3"
     }
 }
