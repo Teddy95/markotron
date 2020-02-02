@@ -84,9 +84,9 @@ Set product name & icons in `package.json`.
 	"productName": "Markotron - Electron Boilerplate",
 	"build": {
 		"icon": {
-			"mac": "build/assets/icons/icon.icns",
-			"windows": "build/assets/icons/icon.ico",
-			"linux": "build/assets/icons/icon.png"
+			"mac": "resources/icons/icon.icns",
+			"windows": "resources/icons/icon.ico",
+			"linux": "resources/icons/icon.png"
 		}
 	}
 }
