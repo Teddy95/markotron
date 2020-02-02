@@ -1,9 +1,9 @@
 <p align="center">
-	<img src="app/assets/repo-header.jpg" alt="" />
+	<img src="resources/repo-header.jpg" alt="" />
 	<span>with Marko, Webpack and Gulp.</span>
 </p>
 
-![Marko App Electron Window](app/assets/app-window.png)
+![Marko App Electron Window](resources/app-window.png)
 
 ```shell
 # Begin with installing Gulp!
