@@ -1,0 +1,22 @@
+if(input.plural)
+	// Plural
+	if(!input.value)
+		// Without values
+		-- ${i18n.__n(input.var)}
+	else if(Array.isArray(input.value))
+		// With multiple values
+		-- ${i18n.__n(input.var, ...input.value)}
+	else
+		// With value
+		-- ${i18n.__n(input.var, input.value)}
+else
+	// Singular
+	if(!input.value)
+		// Without values
+		-- ${i18n.__(input.var)}
+	else if(Array.isArray(input.value))
+		// With multiple values
+		-- ${i18n.__(input.var, ...input.value)}
+	else
+		// With value
+		-- ${i18n.__(input.var, input.value)}

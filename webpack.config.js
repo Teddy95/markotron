@@ -81,7 +81,7 @@ const fontRule = {
 
 // Webpack config for renderer process
 const renderer = {
-	target: 'web',
+	target: 'electron-renderer',
 	name: 'Renderer',
 	mode: env,
 	entry: {
@@ -137,7 +137,7 @@ const renderer = {
 const main = {
     name: 'Main',
     mode: env,
-    target: 'node',
+    target: 'electron-main',
     node: {
         __filename: true,
         __dirname: true

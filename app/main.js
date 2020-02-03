@@ -1,5 +1,7 @@
 // Import required modules
 const path = require('path')
+const i18n = require('i18n')
+const { app, BrowserWindow } = require('electron')
 
 const env = process.env.NODE_ENV || 'production'
 const isDev = env === 'development'
@@ -9,7 +11,18 @@ if (isDev) {
 	require('electron-reload')(path.join(__dirname, '..', 'dist'))
 }
 
-const { app, BrowserWindow } = require('electron')
+// Configure i18n
+i18n.configure({
+	locales: ['en-US', 'de-DE'],
+	defaultLocale: 'en-US',
+	directory: path.join(__dirname, 'locales')
+})
+
+// Set default locale
+i18n.setLocale('en-US')
+
+// Set i18n object as global variable for use in renderer process
+global.i18n = i18n
 
 let win
 
