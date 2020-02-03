@@ -40,9 +40,9 @@ Happy Coding! :heart: :sparkles:
 - `/app/style` CSS / SCSS Stylesheets
 - `/app/view` Marko.js views for the windows
 
-### Production in `/build`
+### Production in `/dist`
 
-- `/build` App compiled from `/app`
+- `/dist` App compiled from `/app`
 
 ### Packaging in `/release`
 

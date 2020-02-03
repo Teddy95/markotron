@@ -89,10 +89,10 @@ const renderer = {
 	},
 	output: {
 		filename: 'renderer.js',
-		path: path.join(__dirname, 'build')
+		path: path.join(__dirname, 'dist')
 	},
 	devServer: isDev ? {
-		contentBase: path.join(__dirname, 'build'),
+		contentBase: path.join(__dirname, 'dist'),
 		historyApiFallback: true,
 		port: 8080,
 		overlay: true,
@@ -148,7 +148,7 @@ const main = {
     },
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
     },
     resolve: {
         extensions: ['.js', '.json', '.marko']

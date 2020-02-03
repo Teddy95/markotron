@@ -1,8 +1,13 @@
+// Import required modules
 const path = require('path')
-const electron = require('electron')
 
-const env = process.env.NODE_ENV || 'development'
+const env = process.env.NODE_ENV || 'production'
 const isDev = env === 'development'
+
+// Reload all web contents in all windows after filechanges in dev mode
+if (isDev) {
+	require('electron-reload')(path.join(__dirname, '..', 'dist'))
+}
 
 const { app, BrowserWindow } = require('electron')
 
@@ -10,18 +15,17 @@ let win
 
 function createWindow () {
 	win = new BrowserWindow({
-		width: 800,
-		height: 600,
+		width: 700,
+		height: 500,
 		webPreferences: {
 			nodeIntegration: true
 		}
 	})
 
+	win.loadFile(path.join(__dirname, '..', 'dist', 'index.html'))
+
 	if (isDev) {
-		win.loadURL(`http://localhost:8080`)
 		win.webContents.openDevTools()
-	} else {
-		win.loadFile(path.join(__dirname, '..', 'build', 'index.html'))
 	}
 
 	win.on('closed', () => {
