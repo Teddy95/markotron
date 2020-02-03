@@ -60,7 +60,6 @@ $ npm run start
 
 ```shell
 # Recompile app after file changes and reload contents in Electron
-
 $ npm run dev
 ```
 
@@ -76,21 +75,18 @@ $ npm run build
 
 ##### Configurations
 
-Set product name & icons in `package.json`.
+Set appBundleId, productName, version & author in `package.json`.
 
 ```json
 {
-	"name": "markotron",
+	"appBundleId": "com.markotron.myapp",
 	"productName": "Markotron - Electron Boilerplate",
-	"build": {
-		"icon": {
-			"mac": "resources/icons/icon.icns",
-			"windows": "resources/icons/icon.ico",
-			"linux": "resources/icons/icon.png"
-		}
-	}
+	"version": "2.0.0",
+	"author": "Author"
 }
 ```
+
+More configurations for packaging are in `/config.js`. See [electron-packager configurations](https://github.com/electron/electron-packager/blob/master/docs/api.md) for more info.
 
 ##### Packaging
 
