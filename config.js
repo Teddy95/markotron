@@ -40,7 +40,6 @@ const windowsConfig = {
 
 // Export configurations for Electron Packager
 module.exports = {
-	// dir: path.join(__dirname, '../'),
 	dir: path.join(__dirname),
 	appCopyright: package.author,
 	appVersion: package.version,
