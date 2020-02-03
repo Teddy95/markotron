@@ -13,9 +13,6 @@
         "package-mac": "npm run build && cross-env NODE_ENV=production PACKAGE_PLATFORM=darwin PACKAGE_ARCH=all node build/package.js",
         "package-linux": "npm run build && cross-env NODE_ENV=production PACKAGE_PLATFORM=linux PACKAGE_ARCH=all node build/package.js",
         "package-windows": "npm run build && cross-env NODE_ENV=production PACKAGE_PLATFORM=win32 PACKAGE_ARCH=all node build/package.js",
-        "package-mac1": "npm run build && electron-packager . --overwrite --platform=darwin --arch=x64 --icon=$npm_package_build_icon_mac --prune=true --out=release",
-        "package-linux1": "npm run build && electron-packager . $npm_package_name --overwrite --asar=true --platform=linux --arch=x64 --icon=$npm_package_build_icon_linux --prune=true --out=release",
-        "package-windows1": "npm run build && electron-packager . $npm_package_name --overwrite --asar=true --platform=win32 --arch=ia32 --icon=$npm_package_build_icon_windows --prune=true --out=release --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=$npm_package_productName",
         "release": "npm run package-mac && npm run package-linux && npm run package-windows"
     },
     "repository": {
@@ -28,15 +25,9 @@
         "url": "https://github.com/Teddy95/markotron/issues"
     },
     "homepage": "https://github.com/Teddy95/markotron#readme",
-    "build": {
-        "icon": {
-            "mac": "resources/icons/icon.icns",
-            "windows": "resources/icons/icon.ico",
-            "linux": "resources/icons/icon.png"
-        }
-    },
     "devDependencies": {
         "@marko/webpack": "^2.0.0",
+        "cross-env": "^7.0.0",
         "css-loader": "^3.4.2",
         "devtron": "^1.4.0",
         "electron": "^7.1.11",
@@ -58,7 +49,6 @@
         "webpack-node-externals": "^1.7.2"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.12.0",
-        "cross-env": "^6.0.3"
+        "@fortawesome/fontawesome-free": "^5.12.0"
     }
 }

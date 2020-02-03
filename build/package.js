@@ -12,4 +12,5 @@ const bundleElectronApp = async (options) => {
 	console.log(`Electron app bundles created:\n${appPaths.join("\n")}`)
 }
 
+// Start packaging
 bundleElectronApp(electronPackagerConfig)
