@@ -1,8 +1,13 @@
 {
 	"greeting": "Hallo Welt!",
-	"interpolatedGreeting": "Hallo %s!",
-	"cats": {
-		"one": "%s Katze",
-		"other": "%s Katzen"
+	"interpolatedGreeting": "Hallo {{name}}!",
+	"cats": "Eine Katze",
+	"cats_plural": "{{count}} Katzen",
+	"electron": {
+		"menu": {
+			"language": "Sprache",
+			"english": "Englisch",
+			"german": "Deutsch"
+		}
 	}
 }

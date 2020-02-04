@@ -1,22 +1,6 @@
-if(input.plural)
-	// Plural
-	if(!input.value)
-		// Without values
-		-- ${i18next.tn(input.var)}
-	else if(Array.isArray(input.value))
-		// With multiple values
-		-- ${i18next.tn(input.var, ...input.value)}
-	else
-		// With value
-		-- ${i18next.tn(input.var, input.value)}
+if(!input.value)
+	// Without values
+	-- ${i18next.t(input.var)}
 else
-	// Singular
-	if(!input.value)
-		// Without values
-		-- ${i18next.t(input.var)}
-	else if(Array.isArray(input.value))
-		// With multiple values
-		-- ${i18next.t(input.var, ...input.value)}
-	else
-		// With value
-		-- ${i18next.t(input.var, input.value)}
+	// With value
+	-- ${i18next.t(input.var, input.value)}
