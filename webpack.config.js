@@ -85,7 +85,7 @@ const renderer = {
 	name: 'Renderer',
 	mode: env,
 	entry: {
-		renderer: './app/renderer.js'
+		renderer: ['./app/renderer/renderer.js']
 	},
 	output: {
 		filename: 'renderer.js',
@@ -118,7 +118,7 @@ const renderer = {
 			filename: '[name].css'
 		}),
 		new HTMLWebpackPlugin({
-			template: './app/index.html',
+			template: './app/renderer/index.html',
 			filename: 'index.html',
 			inject: true,
 			minify: isDev ? false : {
@@ -144,7 +144,7 @@ const main = {
     },
     externals: nodeExternals(),
     entry: {
-        main: ['./app/main.js']
+        main: ['./app/main/main.js']
     },
     output: {
         filename: 'main.js',

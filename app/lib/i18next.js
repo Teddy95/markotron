@@ -14,8 +14,5 @@ i18next.init({
 	}
 })
 
-// Set i18next as global variable for remote use in renderer process
-global.i18next = i18next
-
 // Export i18next for use in main process
 module.exports = i18next
