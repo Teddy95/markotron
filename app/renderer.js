@@ -11,7 +11,7 @@ import './index.html'
 import AppRoot from './view/start'
 
 // Configure i18n
-window.i18n = remote.getGlobal('i18n')
+window.i18next = remote.getGlobal('i18next')
 
 // Render & append app to document body
 const AppRootRendered = AppRoot.renderSync({}).appendTo(document.body)
