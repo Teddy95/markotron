@@ -91,14 +91,6 @@ const renderer = {
 		filename: 'renderer.js',
 		path: path.join(__dirname, 'dist')
 	},
-	devServer: isDev ? {
-		contentBase: path.join(__dirname, 'dist'),
-		historyApiFallback: true,
-		port: 8080,
-		overlay: true,
-		hot: true,
-        stats: 'minimal',
-	} : undefined,
     devtool: isDev ? 'source-map' : undefined,
 	resolve: {
 		extensions: ['.js', '.json', '.marko']
